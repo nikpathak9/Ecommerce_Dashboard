@@ -45,11 +45,10 @@ A modern, responsive, and animated ecommerce analytics dashboard built with **Re
 ## 📦 Installation
 
 1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/nikpathak9/Ecommerce_Dashboard.git
-   cd Ecommerce_Dashboard
-   ```
+  ```bash
+  git clone https://github.com/nikpathak9/Ecommerce_Dashboard.git
+  cd Ecommerce_Dashboard
+  ```
 
 2. **Install dependencies**
   ```bash
