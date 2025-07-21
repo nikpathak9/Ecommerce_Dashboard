@@ -1,12 +1,80 @@
-# React + Vite
+# Ecommerce Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and animated ecommerce analytics dashboard built with **React**, **Tailwind CSS**, **ShadCN UI**, and **Recharts**. Features theme toggling, skeleton loading states, dynamic routing, and smooth micro-interactions.
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open-green?style=for-the-badge)](https://e-comm-dash-board.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Dashboard Preview](<img width="1200" height="800" alt="Screenshot 2025-07-21 at 2 02 08 PM" src="https://github.com/user-attachments/assets/6575cc67-c248-4c7a-9c5c-4dcfcb4dc0d8" />
+)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### UI/UX
+- Fully responsive dashboard layout
+- Dark/Light theme toggle with context API
+- Subtle micro-interactions (Framer Motions and Tailwind Animations)
+- Dynamic routing with `react-router-dom`
+- Custom Fallback UI for undefined routes
+
+### Loading States
+- Skeleton screens for:
+  - Main dashboard
+  - Left sidebar
+  - Right sidebar
+  - Order list (Inside E-Commerce drop down)
+
+### Data Visualization
+- Interactive charts using Recharts
+- Animated data transitions
+- Responsive chart scaling
+
+## Tech Stack
+
+**Frontend:**
+- React 18
+- Tailwind CSS
+- ShadCN UI Components
+- Recharts
+- Vite
+
+**State Management:**
+- Custom Theme Context
+- React Router DOM
+
+## 📦 Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/nikpathak9/Ecommerce_Dashboard.git
+   cd Ecommerce_Dashboard
+   ```
+
+2. **Install dependencies**
+  ```bash
+  npm install
+  ```
+
+3. **Run the development server**
+  ```bash
+  npm run dev
+  ```
+
+4. **Run the dev server on http://localhost:5173**
+
+## Design Decisions & Improvements
+
+- **Built reusable and responsive components to ensure consistent design and reduce code duplication.**
+- **Implemented a custom ThemeContext to manage dark and light themes dynamically throughout the app.**
+- **Added skeleton loaders to improve user experience during data fetch delays and simulate loading animations for better feedback.**
+- **Chose Vite for its fast build times**
+- **Used Recharts and Shadcn for clean, minimalistic charts with animation support to enhance the dashboard’s UX.**
+
+## Challenges Faced
+- **Ensuring all layouts remained fully responsive across different screen sizes, which was crucial for usability, resolved by leveraging Tailwind’s responsive utility classes and testing across multiple viewports to fine-tune layout breakpoints.**
+
+- **Creating a consistent theme toggle experience across nested components, solved by implementing a centralized ThemeContext and ensuring all components consumed the context properly to reflect the correct theme dynamically.**
+
+- **Managing animation resets when switching routes and loading skeletons caused visual inconsistencies, fixed by introducing controlled loading states and delaying skeletons with subtle transitions for a smoother experience.**
+
+- **The animation on charts was not consistent for each render, which was not optimal, solved by generating a random identification key to force consistent animation re-renders.**
