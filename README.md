@@ -66,7 +66,7 @@ A modern, responsive, and animated ecommerce analytics dashboard built with **Re
 
 - **Built reusable and responsive components to ensure consistent design and reduce code duplication.**
 - **Implemented a custom ThemeContext to manage dark and light themes dynamically throughout the app.**
-- **Added skeleton loaders to improve user experience during data fetch delays and simulate loading animations for better feedback.**
+- **Added skeleton loaders to improve user experience and simulate loading animations for better feedback.**
 - **Chose Vite for its fast build times**
 - **Used Recharts and Shadcn for clean, minimalistic charts with animation support to enhance the dashboard’s UX.**
 
