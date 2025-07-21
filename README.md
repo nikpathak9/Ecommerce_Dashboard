@@ -2,10 +2,11 @@
 
 A modern, responsive, and animated ecommerce analytics dashboard built with **React**, **Tailwind CSS**, **ShadCN UI**, and **Recharts**. Features theme toggling, skeleton loading states, dynamic routing, and smooth micro-interactions.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Open-green?style=for-the-badge)](https://e-comm-dash-board.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Open-blue?style=for-the-badge&logo=netlify)](https://e-comm-dash-board.netlify.app/)  
+**Try it now:** [https://e-comm-dash-board.netlify.app/](https://e-comm-dash-board.netlify.app/)
 
-![Dashboard Preview](<img width="1200" height="800" alt="Screenshot 2025-07-21 at 2 02 08 PM" src="https://github.com/user-attachments/assets/6575cc67-c248-4c7a-9c5c-4dcfcb4dc0d8" />
-)
+## Previw
+<img src="https://github.com/user-attachments/assets/6575cc67-c248-4c7a-9c5c-4dcfcb4dc0d8" alt="Dashboard Preview" width="800" />
 
 ## Features
 
