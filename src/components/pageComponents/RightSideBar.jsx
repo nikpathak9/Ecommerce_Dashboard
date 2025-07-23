@@ -44,7 +44,7 @@ const RightSideBar = ({
             </div>
 
             {isLoading ? (
-              <div className='space-y-2 sm:space-y-1 bg-primary dark:bg-card-grey p-2 rounded-lg'>
+              <div className='space-y-2 sm:space-y-1'>
                 {[...Array(4)].map((_, i) => (
                   <div key={i} className='flex items-start gap-2 sm:gap-1'>
                     <Skeleton className='w-7 h-7 rounded-full sm:w-5 sm:h-5' />
