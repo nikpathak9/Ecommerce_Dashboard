@@ -39,7 +39,7 @@ const RadialChart = React.memo(() => {
   const { theme } = useTheme();
 
   return (
-    <Card className='w-full h-full p-4 bg-primary dark:bg-card-grey rounded-[16px] border-none flex flex-col'>
+    <Card className='w-full h-full p-4 bg-primary dark:bg-card-grey rounded-[16px] border-none flex flex-col shadow-none'>
       <CardHeader className='pb-2'>
         <CardTitle className='text-base font-semibold'>Total Sales</CardTitle>
       </CardHeader>

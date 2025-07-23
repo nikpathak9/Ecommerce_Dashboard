@@ -38,7 +38,7 @@ const salesData = [
 
 const TopSelling = () => {
   return (
-    <Card className=' w-full h-full p-4 bg-primary dark:bg-card-grey rounded-[16px] border-none'>
+    <Card className=' w-full h-full p-4 bg-primary dark:bg-card-grey rounded-[16px] border-none shadow-none'>
       <CardHeader>
         <CardTitle>Top Selling Products</CardTitle>
       </CardHeader>

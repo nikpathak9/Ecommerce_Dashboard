@@ -70,12 +70,12 @@ const StatsCards = () => {
   };
 
   return (
-    <div className='grid grid-cols-2 max-sm:grid-cols-2 gap-4 w-full'>
+    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 w-full'>
       {/* Stats Cards on the Home Page */}
       {stats.map((item, i) => (
         <div
           key={i}
-          className='flex flex-col p-4 rounded-xl h-[150px]'
+          className='flex flex-col p-4 rounded-xl h-[150px] hover:scale-105 transition duration-300 ease-in-out cursor-pointer'
           style={{
             backgroundColor:
               item.bg === "#F7F9FB" && theme === "dark" ? "#272827" : item.bg,
@@ -86,10 +86,10 @@ const StatsCards = () => {
           <h2 className='font-semibold text-sm'>{item.title}</h2>
           <div className='flex-grow flex flex-col justify-center'>
             <div className='flex justify-between items-center w-full gap-2'>
-              <p className='text-2xl max-md:text-xl font-semibold break-words'>
+              <p className='text-xl max-md:text-2xl font-semibold break-words'>
                 {formatNumber(animatedValues[i], i)}
               </p>
-              <span className='flex max-md:flex-col items-center gap-2 text-sm max-md:text-xs'>
+              <span className='flex items-center gap-2 text-xs max-md:text-2xs'>
                 {item.change} {item.icon}
               </span>
             </div>

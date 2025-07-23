@@ -42,10 +42,10 @@ const MainPage = () => {
             </>
           ) : (
             <>
-              <div className='w-full lg:w-[75%] min-w-[300px]'>
-                <LineChartSection />
+              <div className='w-full lg:w-[75%] min-w-[200px] hover:scale-105 transition duration-300 ease-in-out cursor-pointer'>
+                <LineChartSection className='w-full h-64' />
               </div>
-              <div className='w-full lg:w-[25%] min-w-[250px]'>
+              <div className='w-full lg:w-[25%] min-w-[250px] hover:scale-105 transition duration-300 ease-in-out cursor-pointer'>
                 <InfoWithMap />
               </div>
             </>
@@ -60,10 +60,10 @@ const MainPage = () => {
             </>
           ) : (
             <>
-              <div className='w-full lg:w-[75%] h-[400px] min-w-[300px]'>
+              <div className='w-full lg:w-[75%] h-[400px] min-w-[200px] hover:scale-105 transition duration-300 ease-in-out cursor-pointer'>
                 <TopSelling />
               </div>
-              <div className='w-full lg:w-[25%] h-[400px] min-w-[250px]'>
+              <div className='w-full lg:w-[25%] h-[400px] min-w-[200px] hover:scale-105 transition duration-300 ease-in-out cursor-pointer'>
                 <RadialChart />
               </div>
             </>

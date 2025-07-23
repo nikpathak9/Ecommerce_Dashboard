@@ -150,3 +150,15 @@ html.dark {
     display: none !important;
   }
 }
+
+/* Add smooth transitions for layout changes */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Prevent layout shifts */
+main {
+  min-width: 0;
+}

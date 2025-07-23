@@ -33,6 +33,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "../context/ThemeContext";
 import { Skeleton } from "../ui/skeleton";
+import { motion } from "framer-motion";
 
 const statuses = [
   { value: "all", label: "All" },
@@ -105,7 +106,7 @@ const generateRandomOrders = (count) => {
     });
 };
 
-const OrderList = () => {
+const OrderList = ({ leftSidebarOpen, rightSidebarOpen, isZoomed }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
   const [sortOption, setSortOption] = useState("all");
@@ -163,7 +164,7 @@ const OrderList = () => {
           date: "Feb 2, 2023",
           status: "rejected",
         },
-        ...generateRandomOrders(15),
+        ...generateRandomOrders(25),
       ]);
       setLoading(false);
     }, 2000);
@@ -251,32 +252,47 @@ const OrderList = () => {
       <h1 className='text-2xl font-bold'>Order List</h1>
 
       <Card className='w-full h-full flex-grow shadow-none border-none bg-transparent'>
-        <CardHeader className='p-4 bg-primary dark:bg-card-grey rounded-[8px]'>
-          <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between w-full'>
-            <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-2 w-full sm:w-auto'>
-              <div className='flex gap-2 w-full sm:w-auto'>
+        <CardHeader className='rounded-xl bg-white dark:bg-card-grey p-4 sm:p-6 shadow-sm border border-border dark:border-muted'>
+          <div className='flex flex-col lg:flex-row gap-4 lg:items-center justify-between w-full'>
+            {/* Left Controls */}
+            <div className='flex flex-col justify-center sm:flex-row flex-wrap gap-2 w-full lg:w-auto items-stretch'>
+              {/* Sort Dropdown */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className='w-full sm:w-auto'
+              >
                 <Select value={sortOption} onValueChange={setSortOption}>
-                  <SelectTrigger className='w-full sm:w-[120px] bg-user dark:bg-primary-dark border-none shadow-none'>
+                  <SelectTrigger className='w-full bg-user dark:bg-primary-dark text-sm border-none shadow-none'>
                     <SelectValue placeholder='Sort by' />
                   </SelectTrigger>
-                  <SelectContent className='w-full sm:w-[120px] border-none shadow-none'>
+                  <SelectContent className='w-full'>
                     <SelectItem value='all'>All</SelectItem>
                     <SelectItem value='newest'>Newest</SelectItem>
                     <SelectItem value='oldest'>Oldest</SelectItem>
                     <SelectItem value='status'>Status</SelectItem>
                   </SelectContent>
                 </Select>
+              </motion.div>
 
+              {/* Filter Dropdown */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className='w-full sm:w-auto'
+              >
                 <DropdownMenu>
-                  <DropdownMenuTrigger
-                    asChild
-                    className='bg-user dark:bg-primary-dark border-none shadow-none'
-                  >
-                    <Button variant='outline' className='flex gap-2'>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant='outline'
+                      className='w-full bg-user dark:bg-primary-dark flex gap-2 text-sm shadow-none border-none'
+                    >
                       <SlidersHorizontal className='h-4 w-4' />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className='w-56'>
+                  <DropdownMenuContent className='w-56 max-md:w-36'>
                     {statuses.map((status) => (
                       <DropdownMenuCheckboxItem
                         key={status.value}
@@ -288,9 +304,17 @@ const OrderList = () => {
                     ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
+              </motion.div>
 
+              {/* Add New Button */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className='w-full sm:w-auto'
+              >
                 <Button
-                  className={`flex gap-2 cursor-pointer ${
+                  className={`w-full flex gap-2 text-sm ${
                     theme === "dark"
                       ? "bg-primary-dark text-white hover:text-black"
                       : "bg-user text-black"
@@ -298,14 +322,15 @@ const OrderList = () => {
                 >
                   <Plus className='h-4 w-4' />
                 </Button>
-              </div>
+              </motion.div>
             </div>
 
-            <div className='relative w-full sm:w-[200px]'>
+            {/* Search */}
+            <div className='relative w-full sm:w-auto lg:min-w-[200px]'>
               <Search className='absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground' />
               <Input
                 placeholder='Search orders...'
-                className='pl-10 w-full'
+                className='pl-10 w-full text-sm'
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -337,25 +362,28 @@ const OrderList = () => {
                 </TableHead>
               </TableRow>
             </TableHeader>
-            <TableBody>
+            <TableBody className={`text-xs`}>
               {currentOrders.length > 0 ? (
                 currentOrders.map((order, index) => (
-                  <TableRow key={`${order.id}-${index}`}>
-                    <TableCell className='font-medium'>{order.id}</TableCell>
-                    <TableCell>
-                      <div className='flex items-center gap-3'>
+                  <TableRow
+                    key={`${order.id}-${index}`}
+                    className='text-xs lg:text-sm'
+                  >
+                    <TableCell className='p-4'>{order.id}</TableCell>
+                    <TableCell className='p-4'>
+                      <div className='flex items-center gap-2'>
                         <img
                           src={order.userImage}
                           alt={order.user}
-                          className='w-8 h-8 rounded-full object-cover'
+                          className='w-4 h-4 sm:w-6 sm:h-6 rounded-full object-cover'
                         />
                         <span>{order.user}</span>
                       </div>
                     </TableCell>
-                    <TableCell>{order.project}</TableCell>
-                    <TableCell>{order.address}</TableCell>
-                    <TableCell>{order.date}</TableCell>
-                    <TableCell className='text-right'>
+                    <TableCell className='p-4'>{order.project}</TableCell>
+                    <TableCell className='p-4'>{order.address}</TableCell>
+                    <TableCell className='p-4'>{order.date}</TableCell>
+                    <TableCell className='text-right p-4 flex justify-end'>
                       {getStatusBadge(order.status)}
                     </TableCell>
                   </TableRow>
@@ -371,7 +399,7 @@ const OrderList = () => {
           </Table>
 
           <div className='flex items-center justify-between p-4 border-t'>
-            <div className='text-sm text-muted-foreground'>
+            <div className='text-xs sm:text-sm text-muted-foreground'>
               Showing{" "}
               <strong>
                 {(currentPage - 1) * itemsPerPage + 1}-

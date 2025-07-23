@@ -83,7 +83,7 @@ const LineChartSection = React.memo(() => {
         <div className='flex items-center gap-4'>
           <h2 className='text-base font-semibold dark:text-white'>Revenue</h2>
           <div className='h-4 border-l border-gray-300 dark:border-gray-600' />
-          <div className='flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4 text-sm max-md:text-xs text-muted-foreground'>
+          <div className='flex flex-col lg:flex-row items-start md:items-center gap-1 md:gap-4 text-sm max-md:text-xs text-muted-foreground'>
             <div className='flex items-center gap-1'>
               <span
                 className='w-2 h-2 rounded-full'

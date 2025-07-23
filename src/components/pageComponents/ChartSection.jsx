@@ -61,7 +61,7 @@ const CustomBarTooltip = ({ active, payload, label }) => {
 
 const ChartSection = React.memo(() => {
   return (
-    <div className='lg:w-1/2 w-full bg-primary dark:bg-card-grey rounded-[16px] p-4 flex flex-col justify-between h-[320px]'>
+    <div className='lg:w-1/2 w-full bg-primary dark:bg-card-grey rounded-[16px] p-4 flex flex-col justify-between h-[320px] hover:scale-105 transition duration-300 ease-in-out cursor-pointer'>
       <h2 className='text-lg font-semibold mb-2'>Projections vs Actual</h2>
       <Card className='w-full h-full flex-grow shadow-none border-none bg-transparent'>
         <CardContent className='p-0 h-full'>
